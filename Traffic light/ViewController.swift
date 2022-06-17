@@ -9,11 +9,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var redCircleLabel: UIView!
+    @IBOutlet weak var yellowCircleLabel: UIView!
+    @IBOutlet weak var greenCircleLabel: UIView!
+
+
+    @IBOutlet weak var mainButton: UIButton!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
 
+    @IBAction func changeCircleButton(_ sender: Any) {
+    }
 }
 
