@@ -19,20 +19,20 @@ class ViewController: UIViewController {
     private let lightIsOn: CGFloat = 1
     private let lightIsOff: CGFloat = 0.3
 
-
-
     override func viewDidLoad() {
         super.viewDidLoad()
-        redCircleLabel.layer.cornerRadius = 75
-        yellowCircleLabel.layer.cornerRadius = 75
-        greenCircleLabel.layer.cornerRadius = 75
-        mainButton.layer.cornerRadius = 20
+        mainButton.layer.cornerRadius = 10
 
         redCircleLabel.alpha = lightIsOff
         greenCircleLabel.alpha = lightIsOff
         yellowCircleLabel.alpha = lightIsOff
     }
 
+    override func viewWillLayoutSubviews() {
+        redCircleLabel.layer.cornerRadius = redCircleLabel.frame.width / 2
+        yellowCircleLabel.layer.cornerRadius = yellowCircleLabel.frame.width / 2
+        greenCircleLabel.layer.cornerRadius = greenCircleLabel.frame.width / 2
+    }
 
     @IBAction func changeCircleButton(_ sender: Any) {
         mainButton.setTitle("NEXT", for: .normal)
@@ -55,7 +55,7 @@ class ViewController: UIViewController {
 }
 
 extension ViewController {
-    enum CurrentColor {
+   private enum CurrentColor {
         case red, yellow, green
     }
 }
